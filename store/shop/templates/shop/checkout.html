@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-2xl font-semibold text-green-700">Checkout</h2>
+<form method="post" class="mt-6">
+    {% csrf_token %}
+    <label class="block">Address:</label>
+    <input type="text" name="address" class="w-full p-2 border rounded-md mt-1" required>
+    <button type="submit" class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Place Order</button>
+</form>
+{% endblock %}

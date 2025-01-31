@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="bg-white p-6 rounded-lg shadow-lg">
+    <img src="{% static 'images/logo-removebg.png' %}" alt="{{ product.name }}" class="h-60 w-full object-cover rounded-md">
+    <h2 class="text-2xl font-bold text-green-700">{{ product.name }}</h2>
+    <p class="text-gray-600 mt-2">{{ product.description }}</p>
+    <p class="text-green-700 font-bold text-lg mt-4">F CFA {{ product.price }}</p>
+    
+    <!-- Add to Cart Button -->
+    <button onclick="addToCart({{ product.id }}, '{{ product.name }}', {{ product.price }})" class="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">
+        Add to Cart
+    </button> 
+    <!-- Buy Now Button -->
+    <button type="button" class="mt-4 inline-block bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600" data-bs-toggle="modal" data-bs-target="#buyNowModal">
+        Buy Now
+    </button>
+</div>
+
+<!-- Buy Now Modal -->
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-green-700" id="buyNowModalLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+   <!-- Full Name -->
+   <div class="mb-3">
+    <label for="fullName" class="form-label">Full Name</label>
+    <input type="text" class="form-control" id="fullName" required>
+</div>
+
+
+                    <!-- Country Selection -->
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" id="country" required onchange="updateTowns()">
+                            <option value="" disabled selected>Select Country</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Congo">Congo</option>
+                        </select>
+                    </div>
+
+                    <!-- Town Selection -->
+                    <div class="mb-3">
+                        <label for="town" class="form-label">Town</label>
+                        <select class="form-select" id="town" required onchange="updateQuarters()">
+                            <option value="" disabled selected>Select Town</option>
+                        </select>
+                    </div>
+
+                    <!-- Quarter Selection -->
+                    <div class="mb-3">
+                        <label for="quarter" class="form-label">Quarter</label>
+                        <select class="form-select" id="quarter" required>
+                            <option value="" disabled selected>Select Quarter</option>
+                        </select>
+                    </div>
+
+                    <!-- Exact Quarter Name -->
+                    <div class="mb-3">
+                        <label for="exactQuarter" class="form-label">Exact Quarter Name</label>
+                        <input type="text" class="form-control" id="exactQuarter" required>
+                    </div>
+
+                    <!-- Delivery Date -->
+                    <div class="mb-3">
+                        <label for="deliveryDate" class="form-label">Delivery Date</label>
+                        <input type="date" class="form-control" id="deliveryDate" required>
+                    </div>
+
+                    <!-- Delivery Time -->
+                    <div class="mb-3">
+                        <label for="deliveryTime" class="form-label">Delivery Time</label>
+                        <input type="time" class="form-control" id="deliveryTime" required>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneNumber" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="sendOrder()">Submit Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Data for Towns and Quarters
+    const townsAndQuarters = {
+        Cameroon: {
+            Yaounde: ["Titi Garage", "Essos", "Ngousso"],
+            Douala: ["Logpom", "Bonamoussadi"]
+        },
+        Congo: {
+            Brazzaville: ["Moungali", "Poto-Poto"],
+            PointeNoire: ["Loandjili", "Tié-Tié"]
+        }
+    };
+
+    // Function to update Towns based on selected Country
+    function updateTowns() {
+        const country = document.getElementById('country').value;
+        const townSelect = document.getElementById('town');
+        townSelect.innerHTML = '<option value="" disabled selected>Select Town</option>';
+
+        if (country && townsAndQuarters[country]) {
+            Object.keys(townsAndQuarters[country]).forEach(town => {
+                const option = document.createElement('option');
+                option.value = town;
+                option.textContent = town;
+                townSelect.appendChild(option);
+            });
+        }
+    }
+
+    // Function to update Quarters based on selected Town
+    function updateQuarters() {
+        const country = document.getElementById('country').value;
+        const town = document.getElementById('town').value;
+        const quarterSelect = document.getElementById('quarter');
+        quarterSelect.innerHTML = '<option value="" disabled selected>Select Quarter</option>';
+
+        if (country && town && townsAndQuarters[country][town]) {
+            townsAndQuarters[country][town].forEach(quarter => {
+                const option = document.createElement('option');
+                option.value = quarter;
+                option.textContent = quarter;
+                quarterSelect.appendChild(option);
+            });
+        }
+    }
+    function addToCart(productId, productName, productPrice) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const product = {
+        id: productId,
+        name: productName,
+        price: productPrice,
+        quantity: 1
+    };
+
+    // Check if the product is already in the cart
+    const existingProduct = cart.find(item => item.id === productId);
+    if (existingProduct) {
+        existingProduct.quantity += 1; // Increment quantity if product exists
+    } else {
+        cart.push(product); // Add new product to cart
+    }
+
+    // Save updated cart to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Optional: Notify the user
+    alert(`${productName} has been added to your cart!`);
+
+    // Sync with server if user is logged in
+    if (userIsLoggedIn) { // Replace with your logic to check if the user is logged in
+        fetch('/add-to-cart/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken') // Add CSRF token for Django
+            },
+            body: JSON.stringify({
+                product_id: productId,
+                product_name: productName,
+                product_price: productPrice
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+        });
+    }
+}
+    // Function to send order details to WhatsApp
+    function sendOrder() {
+    const fullName = document.getElementById('fullName').value;
+    const productName = "{{ product.name }}";
+    const country = document.getElementById('country').value;
+    const town = document.getElementById('town').value;
+    const quarter = document.getElementById('quarter').value;
+    const exactQuarter = document.getElementById('exactQuarter').value;
+    const deliveryDate = document.getElementById('deliveryDate').value;
+    const deliveryTime = document.getElementById('deliveryTime').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+
+    const storeWhatsAppNumber = "+237694103585"; // Replace with your store's WhatsApp number
+    const message = `*Order Details:*\n*Full Name:* _${fullName}_\n*Product:* _${productName}_\n*Country:* _${country}_\n*Town:* _${town}_\n*Quarter:* _${quarter}_\n*Exact Quarter Name:* _${exactQuarter}_\n*Delivery Date:* _${deliveryDate}_\n*Delivery Time:* _${deliveryTime}_\n*Phone Number:* _${phoneNumber}_`;
+    const encodedMessage = encodeURIComponent(message);
+
+    // Redirect to WhatsApp
+    window.location.href = `https://wa.me/${storeWhatsAppNumber}?text=${encodedMessage}`;
+}
+
+</script>
+{% endblock %}

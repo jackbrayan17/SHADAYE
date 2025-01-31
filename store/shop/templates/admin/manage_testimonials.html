@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h2>Manage Testimonials</h2>
+<ul>
+    {% for testimonial in testimonials %}
+        <li>
+            <strong>{{ testimonial.customer.username }}:</strong> "{{ testimonial.content }}" 
+            {% if not testimonial.approved %}
+                <a href="{% url 'approve_testimonial' testimonial.id %}">Approve</a>
+            {% endif %}
+            <a href="{% url 'delete_testimonial' testimonial.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

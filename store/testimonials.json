@@ -1,0 +1,57 @@
+[
+    {
+        "model": "shop.Testimonial",
+        "pk": 1,
+        "fields": {
+            "customer": "Amina Fomba",
+            "rating": 5,
+            "comment": "Absolutely love the service! The products were top-notch, and delivery was super fast.",
+            "image": "static/images/testimonials/test1.jpg",
+            "created_at": "2024-01-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "shop.Testimonial",
+        "pk": 2,
+        "fields": {
+            "customer": "Brenda Ekane",
+            "rating": 4,
+            "comment": "Great experience overall. The customer support was very helpful and responsive.",
+            "image": "static/images/testimonials/test2.jpg",
+            "created_at": "2024-01-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "shop.Testimonial",
+        "pk": 3,
+        "fields": {
+            "customer": "Carole Njoya",
+            "rating": 4,
+            "comment": "Nice product quality! Would definitely recommend this to my friends.",
+            "image": "static/images/testimonials/test3.jpg",
+            "created_at": "2024-01-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "shop.Testimonial",
+        "pk": 4,
+        "fields": {
+            "customer": "Dora Mbassi",
+            "rating": 5,
+            "comment": "Shadaye never disappoints! The website is easy to use, and I got exactly what I ordered.",
+            "image": "static/images/testimonials/test4.jpg",
+            "created_at": "2024-01-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "shop.Testimonial",
+        "pk": 5,
+        "fields": {
+            "customer": "Estelle Ngono",
+            "rating": 5,
+            "comment": "Amazing service! I appreciate the attention to detail and the fast response time.",
+            "image": "static/images/testimonials/test5.jpg",
+            "created_at": "2024-01-01T12:00:00Z"
+        }
+    }
+]

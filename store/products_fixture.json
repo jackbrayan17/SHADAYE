@@ -1,0 +1,211 @@
+[
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SAVON MIELSADAYE",
+            "description": "Indulge in the luxurious feel of our honey-infused soap, designed to nourish and moisturize your skin, leaving it soft and radiant.",
+            "price": "5000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SAVONS"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "CREME CHIRURGIE",
+            "description": "Our advanced surgical cream promotes healing and reduces scarring, making it ideal for post-surgical care and skin recovery.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "CREMES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SUPPOSITOIRE",
+            "description": "Experience fast and effective relief with our suppositories, designed for quick absorption and maximum efficacy.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SPPOSITOIRES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SAVON SHADAYE",
+            "description": "Pamper your skin with our premium soap, enriched with natural ingredients to cleanse and rejuvenate your skin.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SAVONS"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "CREME LUXURA",
+            "description": "Luxuriate in our rich, velvety cream that deeply hydrates and revitalizes your skin, leaving it smooth and glowing.",
+            "price": "15000.00",
+            "stock": 0,
+            "image": "",
+            "category": "CREMES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SUPPOSITOIRE LA CHIRURGIE",
+            "description": "Specially formulated for post-surgical care, this suppository aids in recovery and ensures optimal healing.",
+            "price": "25000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SPPOSITOIRES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SAVON FRUITS",
+            "description": "Refresh your skin with our fruity soap, packed with natural extracts to cleanse and invigorate your senses.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SAVONS"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "CREME VERGETURE(PM)",
+            "description": "Our stretch mark cream is perfect for reducing the appearance of stretch marks, leaving your skin smooth and even.",
+            "price": "5000.00",
+            "stock": 0,
+            "image": "",
+            "category": "CREMES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "SAVON LUXURA",
+            "description": "Experience the ultimate in skin care with our luxurious soap, designed to cleanse and pamper your skin.",
+            "price": "15000.00",
+            "stock": 0,
+            "image": "",
+            "category": "SAVONS"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "CREME VERGETURE(GM)",
+            "description": "This advanced formula helps to diminish stretch marks and improve skin elasticity, giving you a more even skin tone.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "CREMES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "NOILE REPARATRICE(GM)",
+            "description": "Our repairing oil is perfect for restoring and nourishing your skin, leaving it soft and supple.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "HUILES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "HUILE REPARATRICE(PM)",
+            "description": "This lightweight repairing oil is ideal for daily use, helping to rejuvenate and protect your skin.",
+            "price": "7000.00",
+            "stock": 0,
+            "image": "",
+            "category": "HUILES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "CAPSULE VEGETALE",
+            "description": "Our vegetable capsules are packed with natural ingredients to support your overall health and well-being.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "CAPSULES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "HUILE CHEVEUX",
+            "description": "Nourish and strengthen your hair with our hair oil, designed to promote healthy growth and shine.",
+            "price": "5000.00",
+            "stock": 0,
+            "image": "",
+            "category": "HUILES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "HUILE VERGETURE",
+            "description": "This oil is specially formulated to reduce the appearance of stretch marks and improve skin texture.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "HUILES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "GELULE FORMES",
+            "description": "Achieve your fitness goals with our shape-enhancing capsules, designed to support weight management and energy levels.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "GELULES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "GELULE BLANCHISSANTE",
+            "description": "Brighten and even out your skin tone with our whitening capsules, formulated for a radiant complexion.",
+            "price": "25000.00",
+            "stock": 0,
+            "image": "",
+            "category": "GELULES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "GELULE IMPERFECTION",
+            "description": "Combat skin imperfections with our specially formulated capsules, designed to promote clear and healthy skin.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "GELULES"
+        }
+    },
+    {
+        "model": "shop.Product",
+        "fields": {
+            "name": "GELULE ECLAIROISSANT",
+            "description": "Illuminate your skin from within with our brightening capsules, designed to enhance your natural glow.",
+            "price": "10000.00",
+            "stock": 0,
+            "image": "",
+            "category": "GELULES"
+        }
+    }
+]
